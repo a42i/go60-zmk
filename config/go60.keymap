@@ -129,7 +129,7 @@
             &kp LCTRL              &kp A   &kp S      &kp D    &kp F     &kp G                                               &kp H         &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
             &magic LAYER_Magic 0   &kp Z   &kp X      &kp C    &kp V     &kp B                                               &kp N         &kp M     &kp COMMA  &kp DOT   &kp FSLH  &keypad_td
                                            &kp GRAVE  &kp DEL  &kp BSPC                                                                    &kp LGUI  &kp LBKT   &kp RBKT
-                                                                         &LALT  &kp LSHFT  &kp LCTRL     &kp ESC  &kp SPACE  &mt RALT RET
+                                                                         &kp LALT  &kp LSHFT  &kp LCTRL  &kp ESC  &kp SPACE  &mt RALT RET
             >;
         };
 
