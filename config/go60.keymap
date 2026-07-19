@@ -33,10 +33,24 @@
     };
 
     behaviors {
-        layer_td: layer_td {
+        alt_td: alt_td {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&mo LAYER_ALT>, <&to LAYER_ALT>;
+        };
+
+        conf_mm: conf_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug_status_macro>, <&to LAYER_CONF>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        alt_mm: alt_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&alt_td>, <&conf_mm>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         lgui_lgui_dt: lgui_lgui_dt {
@@ -138,7 +152,7 @@
                 &kp TAB          &kp Q   &kp W      &kp E      &kp R     &kp T                                                       &kp Y      &kp U      &kp I      &kp O     &kp P     &kp BSLH
                 &lctrl_lgui_dt   &kp A   &kp S      &kp D      &kp F     &kp G                                                       &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
                 &lshift_caps_dt  &kp Z   &kp X      &kp C      &kp V     &kp B                                                       &kp N      &kp M      &kp COMMA  &kp DOT   &kp FSLH  &rshift_caps_dt
-                                         &kp GRAVE  &layer_td  &kp BSPC                                                                         &layer_td  &kp LBKT   &kp RBKT
+                                         &kp GRAVE  &alt_mm    &kp BSPC                                                                         &alt_mm    &kp LBKT   &kp RBKT
                                                                          &kp LALT  &lgui_lgui_dt  &kp DEL    &mt RCTRL ESC  &kp RET  &kp SPACE
             >;
         };
@@ -160,7 +174,7 @@
  &bootloader  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                     &none         &none         &none   &none   &none       &bootloader
   &sys_reset  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                     &none         &none         &none   &none   &none        &sys_reset
        &none            &none            &bt_0            &bt_1            &bt_2            &bt_3                                     &none         &none         &none   &none   &none &none
-                                  &out OUT_USB            &none            &none                                                                    &none         &none   &none
+                                  &out OUT_USB            &to LAYER_BASE   &none                                                                    &to LAYER_BASE &none   &none
                                                                                             &none   &none   &none     &none   &none   &none
             >;
         };
