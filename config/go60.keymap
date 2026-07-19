@@ -33,6 +33,12 @@
     };
 
     behaviors {
+        layer_td: layer_td {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&mo LAYER_ALT>, <&to LAYER_ALT>;
+        };
+
         lgui_lgui_dt: lgui_lgui_dt {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -128,12 +134,12 @@
         compatible = "zmk,keymap";
         LAYER_BASE {
             bindings = <
-                &kp EQUAL        &kp N1  &kp N2     &kp N3   &kp N4    &kp N5                                                      &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp MINUS
-                &kp TAB          &kp Q   &kp W      &kp E    &kp R     &kp T                                                       &kp Y      &kp U     &kp I      &kp O     &kp P     &kp BSLH
-                &lctrl_lgui_dt   &kp A   &kp S      &kp D    &kp F     &kp G                                                       &kp H      &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
-                &lshift_caps_dt  &kp Z   &kp X      &kp C    &kp V     &kp B                                                       &kp N      &kp M     &kp COMMA  &kp DOT   &kp FSLH  &rshift_caps_dt
-                                         &kp GRAVE  &kp DEL  &kp BSPC                                                                         &kp LGUI  &kp LBKT   &kp RBKT
-                                                                       &kp LALT  &lgui_lgui_dt  &kp DEL    &mt RCTRL ESC  &kp RET  &kp SPACE
+                &kp EQUAL        &kp N1  &kp N2     &kp N3     &kp N4    &kp N5                                                      &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
+                &kp TAB          &kp Q   &kp W      &kp E      &kp R     &kp T                                                       &kp Y      &kp U      &kp I      &kp O     &kp P     &kp BSLH
+                &lctrl_lgui_dt   &kp A   &kp S      &kp D      &kp F     &kp G                                                       &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
+                &lshift_caps_dt  &kp Z   &kp X      &kp C      &kp V     &kp B                                                       &kp N      &kp M      &kp COMMA  &kp DOT   &kp FSLH  &rshift_caps_dt
+                                         &kp GRAVE  &layer_td  &kp BSPC                                                                         &layer_td  &kp LBKT   &kp RBKT
+                                                                         &kp LALT  &lgui_lgui_dt  &kp DEL    &mt RCTRL ESC  &kp RET  &kp SPACE
             >;
         };
 
@@ -143,7 +149,7 @@
                 &none      &none   &kp HOME     &kp UP    &kp END      &kp PG_UP                                              &kp KP_N7  &kp KP_N8   &kp KP_N9  &kp KP_MINUS     &kp KP_SLASH        &kp F12
                 &trans  &kp LC(Y)   &kp LEFT   &kp DOWN  &kp RIGHT      &kp PG_DN                                              &kp KP_N4  &kp KP_N5   &kp KP_N6   &kp KP_PLUS  &kp KP_MULTIPLY     &kp KP_NUM
                 &none  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(V))                                              &kp KP_N1  &kp KP_N2   &kp KP_N3  &kp KP_ENTER        &kp EQUAL &to LAYER_BASE
-                                      &none     &trans     &trans                                                                        &kp KP_N0  &kp KP_DOT      &kp BSPC
+                                      &none     &to LAYER_BASE     &trans                                                                        &to LAYER_BASE  &kp KP_DOT      &kp BSPC
                                                              &none  &trans  &trans              &trans  &trans  &kp KP_N0
             >;
         };
