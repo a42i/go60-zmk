@@ -22,6 +22,8 @@
 #define LAYER_ALT  1
 #define LAYER_CONF 2
 
+#define EXIT_L &to LAYER_BASE
+
 / {
     input_processors {
         zip_click_to_right_click_mapper: zip_click_to_right_click_mapper {
@@ -166,23 +168,23 @@
 
         LAYER_ALT {
             bindings = <
-                &kp F1  &kp F2  &kp F3  &kp F4    &kp F5     &kp F6                                                 &kp F7     &kp F8     &kp F9    &kp F10    &kp F11  &kp F12
-                &none   &none   &none   &none     &none      &none                                                  &none      &none      &kp UP    &none      &none    &none
-                &none   &none   &none   &none     &none      &kp HOME                                               &kp PG_UP  &kp LEFT   &kp DOWN  &kp RIGHT  &none    &none
-                &none   &none   &none   &none     &none      &kp END                                                &kp PG_DN  &none      &none     &none      &none    &none
-                                &none   &kp LEFT  &kp RIGHT                                                                    &kp UP     &kp DOWN  &none
-                                                             &none  &none  &to LAYER_BASE    &to LAYER_BASE  &none  &none
+                &kp F1  &kp F2  &kp F3  &kp F4    &kp F5     &kp F6                                    &kp F7     &kp F8     &kp F9    &kp F10    &kp F11  &kp F12
+                &none   &none   &none   &none     &none      &none                                     &none      &none      &kp UP    &none      &none    &none
+                &none   &none   &none   &none     &none      &kp HOME                                  &kp PG_UP  &kp LEFT   &kp DOWN  &kp RIGHT  &none    &none
+                &none   &none   &none   &none     &none      &kp END                                   &kp PG_DN  &none      &none     &none      &none    &none
+                                &none   &kp LEFT  &kp RIGHT                                                       &kp UP     &kp DOWN  &none
+                                                             EXIT_L  EXIT_L  EXIT_L    EXIT_L  EXIT_L  EXIT_L
             >;
         };
 
         LAYER_CONF {
             bindings = <
-                &bt BT_CLR   &kp C_BRI_DN     &kp C_BRI_UP     &kp C_PREV       &kp C_NEXT       &kp C_PP                                                         &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none  &none  &bt BT_CLR_ALL
-                &bootloader  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                  &none       &none         &none         &none  &none  &bootloader
-                &none        &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                  &none       &none         &none         &none  &none  &none
-                &none        &none            &bt_0            &bt_1            &bt_2            &bt_3                                                            &none       &none         &none         &none  &none  &none
-                                              &out OUT_USB     &none            &none                                                                                         &none         &none         &none
-                                                                                                 &none            &none  &to LAYER_BASE    &to LAYER_BASE  &none  &none
+                &bt BT_CLR   &kp C_BRI_DN     &kp C_BRI_UP     &kp C_PREV       &kp C_NEXT       &kp C_PP                                            &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none  &none  &bt BT_CLR_ALL
+                &bootloader  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                     &none       &none         &none         &none  &none  &bootloader
+                &none        &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                     &none       &none         &none         &none  &none  &none
+                &none        &none            &bt_0            &bt_1            &bt_2            &bt_3                                               &none       &none         &none         &none  &none  &none
+                                              &out OUT_USB     &none            &none                                                                            &none         &none         &none
+                                                                                                 EXIT_L            EXIT_L  EXIT_L    EXIT_L  EXIT_L  EXIT_L
             >;
         };
 
