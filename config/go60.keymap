@@ -67,6 +67,13 @@
             bindings = <&kp LCTRL>, <&sk LGUI>;
         };
 
+        rctrl_rgui_dt: ctrl_rgui_dt {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RCTRL>, <&sk RGUI>;
+        };
+
         lshift_caps_dt: lshift_caps_dt {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -152,8 +159,8 @@
                 &kp TAB          &kp Q   &kp W      &kp E      &kp R     &kp T                                                       &kp Y      &kp U      &kp I      &kp O     &kp P     &kp BSLH
                 &lctrl_lgui_dt   &kp A   &kp S      &kp D      &kp F     &kp G                                                       &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
                 &lshift_caps_dt  &kp Z   &kp X      &kp C      &kp V     &kp B                                                       &kp N      &kp M      &kp COMMA  &kp DOT   &kp FSLH  &rshift_caps_dt
-                                         &kp GRAVE  &layer_mm  &kp BSPC                                                                         &layer_mm  &kp LBKT   &kp RBKT
-                                                                         &kp LALT  &lgui_lgui_dt  &kp DEL    &mt RCTRL ESC  &kp RET  &kp SPACE
+                                         &kp GRAVE  &layer_mm  &kp BSPC                                                                         &kp SPACE  &kp LBKT   &kp RBKT
+                                                                         &kp LALT  &lgui_lgui_dt  &kp DEL    &mt RCTRL ESC  &kp RET  &rctrl_rgui_dt
             >;
         };
 
